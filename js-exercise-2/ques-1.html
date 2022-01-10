@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title></title>
+        
+        <link rel="stylesheet" href="">
+        <script>
+            function check(){
+                arr = document.getElementById("arrayInt").value;
+                n = parseInt(document.getElementById("inputs").value);
+                arr = arr.split(",");
+                
+                let frt = "";
+                let bck = "";
+                for(let i =0; i<n;i++){
+                    frt = frt +" "+ arr[i];
+                }
+                for(let i=n; i<arr.length;i++){
+                    bck = bck +" "+ arr[i];                    
+                }
+                para = document.getElementById("textAnswer");
+                para.innerHTML = "First " + n+ " elements : "+ frt + " Last " + n+ " elements : "+ bck;               
+                
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter Array with Comma</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type Array with comma"><br>
+            <h4>Enter Elements to show</h4>
+            <input type="text" id='inputs' placeholder="Enter a Number"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

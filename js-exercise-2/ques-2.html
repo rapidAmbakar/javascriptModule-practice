@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title></title>
+        
+        <link rel="stylesheet" href="">
+        <script>
+            function check(){
+                arr = document.getElementById("arrayInt").value;
+                //arr = arr.split(",");
+                let out = "";
+                for(let i in arr){
+                    let chk = praseInt(arr[i])
+                    /*if(chk == 1){
+                        out = out + arr[i];
+                    }else{
+                        out = out +"-"+ arr[i];
+                    }*/
+                }
+                para = document.getElementById("textAnswer");
+                para.innerHTML = out;               
+                alert(out)
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            Input :
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type a number"><br><br>
+           
+            <div id='textAnswer'> Output: will come here</div><br><br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+       
+        
+        <script src="" async defer></script>
+    </body>
+</html>
