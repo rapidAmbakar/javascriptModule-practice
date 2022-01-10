@@ -1,2 +1,3 @@
 <h1>JAVA-SCRIPT</h1>
-prompts
+
+https://rapidambakar.github.io/javascriptModule-practice/index.html
