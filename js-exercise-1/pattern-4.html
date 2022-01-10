@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>    
+        let cou ="";
+        let flg = prompt("Enter a Odd Number");
+        flg = parseInt(flg);
+        let mid = Math.ceil(flg/2);
+        let lft = 1;
+        let add = -1;
+        document.write("<h1>Pattern For "+flg+" numbers </h1>");
+        for(let i = 1; i<=flg; i++){
+            cou = '';
+            for(let j = 1 ; j<=flg;j++){
+                if ( j <= lft){
+                    cou = cou + "*";
+                }
+                else{
+                    cou = cou + "&nbsp&nbsp";
+                    //cou = cou + "1";
+                }
+                if(i==mid){
+                    add = 1
+                }                
+            }
+            lft = lft - add;
+            document.write(cou+"<br>");
+        }
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
