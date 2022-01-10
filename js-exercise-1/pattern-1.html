@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>    
+        let cou ="";
+        let flg = prompt("Enter a Number");
+        flg = parseInt(flg)
+        document.write("<h1>Pattern For "+flg+" numbers </h1>");
+        for(let i = 0; i<flg; i++){
+            cou = '';
+            for(let j = 0 ; j<flg;j++){
+                if ( i == j){
+                    cou = cou + "*";  
+                }else if(i+j == flg-1){
+                    cou = cou + "*";
+                }
+                else{
+                    cou = cou + "&nbsp";
+                }
+            }
+            document.write(cou+"<br>");
+        }
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
