@@ -11,17 +11,17 @@
                 arr = document.getElementById("arrayInt").value;
                 //arr = arr.split(",");
                 let out = "";
-                for(let i in arr){
-                    let chk = praseInt(arr[i])
-                    /*if(chk == 1){
+                for(let i =0; i<arr.length;i++){
+                    chk = parseInt(arr[i]);
+                    //document.write(arr[i]+"<br>");
+                    if(chk%2 == 1){
                         out = out + arr[i];
                     }else{
-                        out = out +"-"+ arr[i];
-                    }*/
+                        out = out + arr[i]+"-";
+                    }
                 }
                 para = document.getElementById("textAnswer");
                 para.innerHTML = out;               
-                alert(out)
             }
         </script>
 
