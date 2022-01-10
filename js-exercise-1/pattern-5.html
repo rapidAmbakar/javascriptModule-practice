@@ -8,17 +8,17 @@
         let lft = 1;
         let add = -1;
         document.write("<h1>Pattern For "+flg+" numbers </h1>");
-        for(let i = 1; i<=flg; i++){
+        for(let i = 1; i<=flg + (flg-1); i++){
             cou = '';
             for(let j = 1 ; j<=flg;j++){
-                if ( j <= lft){
-                    cou = cou + "*";
+                if ( j < lft){
+                    cou = cou + "&nbsp&nbsp";
                 }
                 else{
-                    cou = cou + "&nbsp&nbsp";
+                    cou = cou + "&nbsp&nbsp"+j;
                     //cou = cou + "1";
                 }
-                if(i==mid){
+                if(i==flg){
                     add = 1
                 }                
             }
