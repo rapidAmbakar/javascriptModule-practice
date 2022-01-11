@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title></title>
+        
+        <link rel="stylesheet" href="">
+        <script>
+            function check(){
+                arr = document.getElementById("arrayInt").value;
+                arr = arr.split(",").map(function(item) {
+                   return parseInt(item, 10);
+                });
+                arr = arr.sort(function(a, b){return a - b});
+                let dict = {}
+
+                for(let i = 0 ; i<arr.length;i++){
+                    dict[arr[i]] = 0;
+                }
+
+                for(let i = 0 ; i<arr.length;i++){
+                    dict[arr[i]]++;
+                }
+                let keys = Object.keys(dict);
+                max = 0;
+                flg = 0;
+                for(let i in keys){
+                    //document.write(keys[i] + "<br>");
+                    if (dict[keys[i]] > max ){
+                        max = dict[keys[i]]
+                        flg = keys[i];
+                    }
+                }
+
+                para = document.getElementById("textAnswer");
+                para.innerHTML = "Most frequent : " + flg;               
+                
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter Array with Comma</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type Array with comma"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
