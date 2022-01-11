@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+
+            function IsInArr(arr,n){
+                for(let i in arr){
+                    if(n == arr[i]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+            function check(){
+                arr = document.getElementById("arrayInt").value;
+                //arr = arr.split(",").map(function(item) {
+                //   return parseInt(item, 10);
+               // });
+
+                arr = arr.split(",");
+                //arr = arr.sort(function(a, b){return a - b});
+                let arr_stack = [];
+                let new_arr = [];
+                let len = arr.length;
+                let k = 0;
+                let cons = ""; 
+                while(true){
+                    r = Math.floor(Math.random()*len);
+                    if(!IsInArr(arr_stack, r)){
+                        arr_stack.push(r);
+                        new_arr.push(arr[r])
+                        //cons = cons + arr[r] + "at postion " + r + "<br>";
+                        k++;
+                    }
+                    if(k == len){
+                        break;
+                    }
+                }             
+
+                
+
+                
+
+                para = document.getElementById("textAnswer");
+                para.innerHTML = new_arr;        
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter Array with Comma</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type Array with comma"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
