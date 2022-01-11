@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+
+            function check(){
+                arr = document.getElementById("arrayInt").value;
+                n = +document.getElementById("Int").value;
+                let txt = []
+                //let i=n
+                for(let i=0; i<arr.length; i += 2){
+                    console.log("Slice " + arr.slice(i,i+n))
+                    console.log("var " +i,i+n)
+                    txt.push(arr.slice(i,i+n));
+                }
+                /*while(i<arr.length){
+                    //console.log(arr.slice(i-n,n), "   ", arr.length);    
+                    //console.log(i);
+                    txt.push(arr.slice(i-n,i));
+                    i = i+n;
+                }*/
+                para = document.getElementById("textAnswer");
+
+                para.innerHTML = txt;        
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter String</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type String">
+            <h4>Insert a Position</h4>
+            <input type="text" name='Number' id='Int' placeholder="A Integer">
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
