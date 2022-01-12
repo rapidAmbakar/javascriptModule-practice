@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+            function IsInArr(a,n){
+                console.log("Array to check in :" + a)
+                for(let i in a){
+                    if(n != a[i]){
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+
+            function unionArr(arr,arr2){
+                let ar = [];
+                
+                for(let i in arr){
+                    ar.push(arr[i]);
+                }
+                
+                for(let i in arr2){
+                    ar.push(arr2[i]);
+                }
+                return ar;
+            }
+
+            function diffArr(ar,ar2){
+                let g = []
+                for(let i in ar){
+                    if(!IsInArr(ar2,ar[i])){
+                        g.push(ar[i])
+                    }
+                }
+                return g;
+            }
+
+            
+            function check(){
+                static_array = [ "a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z" ]
+                n = +document.getElementById("arrayInt").value;
+                txt = []
+                for(let i = 0; i<static_array.length;i+=n){
+                    txt.push(static_array[i])
+                }
+
+                             
+
+                para = document.getElementById("textAnswer");
+                para.innerHTML = txt;       
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter a Number</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type Array with comma"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
