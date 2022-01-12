@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+            
+
+            function check(){
+                arr = document.getElementById("arrayInt").value;         
+                arr2 = document.getElementById("arrayInt2").value;         
+                
+               
+                const date1 = new Date(arr);
+                const date2 = new Date(arr2);
+                let diffTime = Math.abs(date2 - date1);
+                let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));       
+               
+                year = Math.floor(diffDays/365)
+                diffDays = diffDays - (year*365)
+                month = Math.floor(diffDays/30)             
+                diffDays = diffDays - (month*30)
+                day = diffDays
+                txt = year + " Years " + month + " Months " + day + " Days";
+                para = document.getElementById("textAnswer");
+                para.innerHTML = txt;    
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            
+            <h4>Enter Date - 1</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="01/07/2020"><br>
+            <h4>mm/dd/yyyy</h4>
+            <h4>Enter Date - 2</h4>
+            <input type="text" name='arrayInt' id='arrayInt2' placeholder="23/07/2020"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
