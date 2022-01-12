@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+            
+
+            function check(){
+                arr = document.getElementById("arrayInt").value;         
+                dateObj = new Date(arr * 1000);
+                utcString = dateObj.toUTCString();
+                time = utcString;
+                       
+
+                
+
+                para = document.getElementById("textAnswer");
+                para.innerHTML = time;    
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter Unix Time Stamp</h4>
+            <input type="text" name='arrayInt' id='arrayInt' placeholder="Type Array with comma"><br>
+            <br>
+            <input type='button' value='Submit' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
