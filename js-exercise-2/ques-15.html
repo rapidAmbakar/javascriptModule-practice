@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+                let arrObj = [
+                    {'id':101,'name':"Pushkar Ambatkar",'age':23},
+                    {'id':102,'name':"Ravindra Singh",'age':25},
+                    {'id':103,'name':"Yash Manvar",'age':21},
+                    {'id':104,'name':"Darshan Padaliya",'age':35},
+                    {'id':105,'name':"Vanita Patel",'age':20},
+                    {'id':106,'name':"Savan Karathiya",'age':30},
+                    {'id':107,'name':"Hardi Patel",'age':15},
+                    {'id':108,'name':"Shivika Sharma",'age':26},
+                    {'id':109,'name':"Saptarshi Das",'age':29},
+                    {'id':110,'name':"Tirthak Shah",'age':21}
+                ];
+                console.log("hi")
+                
+                 function set(){
+                    txt = "";                
+                    for(let i in arrObj){
+                        txt = txt + arrObj[i]['id'] + " " + arrObj[i]['name'] + " " + arrObj[i]['age'] + "<br>";
+                    }
+                    show = document.getElementById("textSort");
+                    show.innerHTML = txt; 
+                 }
+
+
+               
+                
+
+            function deleteArr(){
+                id_del = +document.getElementById('id_delete').value;
+                for(let i in arrObj){
+                    if (arrObj[i]['id'] == id_del){
+                        delete arrObj[i];
+                    }
+                }
+                set();
+            } 
+            function check(){                 
+                name = document.getElementById("id_name").value;
+                age = +document.getElementById("id_age").value;
+                id_s = Math.round(Math.random()*100+100)
+                arrObj.push({'id':id_s,'name':name,'age':age});
+                set();    
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h4>Enter Id to Delete</h4>
+            <input type='text' id='id_delete' placeholder="Enter Id to Delete">
+            <input type='button' value='Delete!' onClick="deleteArr()">
+            <h4>Add to Array</h4>
+            <input type='text' id='id_name' placeholder="Enter Name"><br>
+            <input type='text' id='id_age' placeholder="Enter Age"><br>
+            <input type='button' value='Add!' onClick="check()">
+        </form>
+        <h1>Objects | Array</h1>
+        <p id='textSort'>😱</p>
+        <p id='textAnswer'></p>
+        
+        <script> 
+        set();
+        </script>
+    </body>
+</html>
