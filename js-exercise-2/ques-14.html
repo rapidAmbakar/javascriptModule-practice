@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>        
+        <title></title>        
+        <link rel="stylesheet" href="">
+        <script>
+            function sortAge(arrObj){
+                let temp;
+                for(let i in arrObj){
+                    for(let j in arrObj)
+                        if (arrObj[i]['age'] < arrObj[j]['age']){
+                            temp = arrObj[j];
+                            arrObj[j] = arrObj[i];
+                            arrObj[i] = temp;
+                        }                
+                }
+                let txt= "";
+                for(let i in arrObj){
+                    txt = txt + arrObj[i]['id'] + " " + arrObj[i]['name'] + " " + arrObj[i]['age'] + "<br>";
+                }
+                return txt
+            }
+
+            function sortName(arrObj){
+                let temp;
+                for(let i in arrObj){
+                    for(let j in arrObj)
+                        if (arrObj[i]['name'] < arrObj[j]['name']){
+                            temp = arrObj[j];
+                            arrObj[j] = arrObj[i];
+                            arrObj[i] = temp;
+                        }                
+                }
+
+                let txt= "";
+                for(let i in arrObj){
+                    txt = txt + arrObj[i]['id'] + " " + arrObj[i]['name'] + " " + arrObj[i]['age'] + "<br>";
+                }
+                return txt
+            }
+
+
+            function check(){
+                //arr = document.getElementById("arrayInt").value;                
+                //n = arr.length;
+
+                let c = [
+                    {'id':101,'name':"Pushkar Ambatkar",'age':23},
+                    {'id':102,'name':"Ravindra Singh",'age':25},
+                    {'id':103,'name':"Yash Manvar",'age':21},
+                    {'id':104,'name':"Darshan Padaliya",'age':35},
+                    {'id':105,'name':"Vanita Patel",'age':20},
+                    {'id':106,'name':"Savan Karathiya",'age':30},
+                    {'id':107,'name':"Hardi Patel",'age':15},
+                    {'id':108,'name':"Shivika Sharma",'age':26},
+                    {'id':109,'name':"Saptarshi Das",'age':29},
+                    {'id':110,'name':"Tirthak Shah",'age':21}
+                ];
+                
+                let txt = "<h2>Sorting According to Age</h2>"
+
+                console.log(c);
+
+                txt = txt + sortAge(c);
+
+                txt = txt + "<h2>Sorting According to Name</h2>" + sortName(c);
+                para = document.getElementById("textAnswer");
+                para.innerHTML = txt;     
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <h1>Sorting Array of Objects</h1>
+            
+            <br>
+            <input type='button' value='Sort!' onClick="check()">
+        </form>
+        <p id='textAnswer'>😱</p>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
